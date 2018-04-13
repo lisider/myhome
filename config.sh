@@ -1,14 +1,14 @@
 #!/bin/bash
 
 AddUser(){
-    echo 3
+
     USERNAME=$0
-    echo 4
+
     echo ---${USERNAME}---
     sudo useradd ${USERNAME} -s /bin/bash -G sudo ;sudo passwd ${USERNAME}
     sudo git clone https://github.com/lisider/myhome.git /home/${USERNAME}
+    sudo cp /etc/skel/*  /home/${USERNAME}/
     sudo chown ${USERNAME}:${USERNAME} /home/${USERNAME} -R
-    cp /etc/skel/*  /home/${USERNAME}/
     #ln -s /home/${USERNAME}/.config/.profile /home/${USERNAME}/.profile
     #ln -s /home/${USERNAME}/.config/.bashrc /home/${USERNAME}/.bashrc
 }
@@ -21,9 +21,9 @@ SudoWithoutPasswd(){
 
 
 Main(){
-    echo 1
+
     AddUser $*
-    echo 2
+
     SudoWithoutPasswd
 
 }
