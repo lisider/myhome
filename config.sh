@@ -17,7 +17,7 @@ AddUser(){
 
 SudoWithoutPasswd(){
     echo -e "\033[32m Do $FUNCNAME ... Start\033[0m"
-    echo ${PASSWD} | sudo sed -i "\$a $USER ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
+    echo ${PASSWD} | sudo sed -i "\$a ${USERNAME} ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
     echo -e "\033[32m Do $FUNCNAME ... End\033[0m"
 }
 
