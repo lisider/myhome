@@ -5,7 +5,8 @@ AddUser(){
     USERNAME=$0
 
     echo ---${USERNAME}---
-    useradd ${USERNAME} -s /bin/bash -G sudo ;sudo passwd ${USERNAME}
+    useradd ${USERNAME} -s /bin/bash -G sudo ;
+    passwd ${USERNAME}
     git clone https://github.com/lisider/myhome.git /home/${USERNAME}
     cp /etc/skel/.profile  /home/${USERNAME}/
     cp /etc/skel/.bashrc  /home/${USERNAME}/
