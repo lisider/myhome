@@ -2,6 +2,7 @@
 
 AddUser(){
     USERNAME=$1
+    echo ---${USERNAME}---
     sudo useradd ${USERNAME} -s /bin/bash -G sudo ;sudo passwd ${USERNAME}
     sudo git clone https://github.com/lisider/myhome.git /home/${USERNAME}
     sudo chown ${USERNAME}:${USERNAME} /home/${USERNAME} -R
