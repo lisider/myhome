@@ -11,9 +11,12 @@ function readfile ()
             readfile $1"/"$file
         else
             #否则就能够读取该文件的地址
+            if [ ${file%.*} != ${file##*.}  ] && [ ${file##*.}  == "c" ] || [ ${file##*.}  == "h"  ]
+            then
 vim $1"/"$file<<ipipioipiopip
 gg=G:wq
 ipipioipiopip
+fi
 
 #读取该文件的文件名，basename是提取文件名的关键字
 #echo `basename $file`
