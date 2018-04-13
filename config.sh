@@ -5,12 +5,14 @@ AddUser(){
     USERNAME=$0
 
     echo ---${USERNAME}---
-    sudo useradd ${USERNAME} -s /bin/bash -G sudo ;sudo passwd ${USERNAME}
-    sudo git clone https://github.com/lisider/myhome.git /home/${USERNAME}
-    sudo cp /etc/skel/.profile  /home/${USERNAME}/
-    sudo cp /etc/skel/.bashrc  /home/${USERNAME}/
-    sudo cp /etc/skel/.bash_logout  /home/${USERNAME}/
-    sudo chown ${USERNAME}:${USERNAME} /home/${USERNAME} -R
+    sudo su -
+    useradd ${USERNAME} -s /bin/bash -G sudo ;sudo passwd ${USERNAME}
+    git clone https://github.com/lisider/myhome.git /home/${USERNAME}
+    cp /etc/skel/.profile  /home/${USERNAME}/
+    cp /etc/skel/.bashrc  /home/${USERNAME}/
+    cp /etc/skel/.bash_logout  /home/${USERNAME}/
+    echo "source ~/.config/.alias" >> /home/suweishuai/.bashrc 
+    chown ${USERNAME}:${USERNAME} /home/${USERNAME} -R
     #ln -s /home/${USERNAME}/.config/.profile /home/${USERNAME}/.profile
     #ln -s /home/${USERNAME}/.config/.bashrc /home/${USERNAME}/.bashrc
 }
