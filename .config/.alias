@@ -1,0 +1,3 @@
+alias rm!="/bin/rm -vi"
+alias rm=trash-put
+alias lstrash=trash-list
