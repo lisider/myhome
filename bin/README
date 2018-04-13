@@ -1,0 +1,11 @@
+- format 是一个脚本工具,用来格式化代码,基于vim,基于vim 的配置 ,vim 配置 可以参考 
+```c
+
+"设置一次回车的宽度,默认为8
+set shiftwidth=4
+"设置 将回车全部转换为空格,否则将转换为tab
+set expandtab 
+"设置tab 的宽度
+set tabstop=4
+
+```
