@@ -53,6 +53,15 @@ InstallToolsFromSource(){
     sudo apt install python3-dev python3-pip
     sudo pip3 install thefuck
 
+    # oh-my-zsh
+    sudo apt-get install zsh
+    cd ~;sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts;./install.sh
+    cd ~;sudo fc-cache dir .local -fv
+
+
+
 
 
 }
