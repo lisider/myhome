@@ -49,6 +49,11 @@ InstallToolsFromSource(){
     #3 ici
     pip install ici
 
+    #4 the fuck
+    sudo apt install python3-dev python3-pip
+    sudo pip3 install thefuck
+
+
 
 }
 
