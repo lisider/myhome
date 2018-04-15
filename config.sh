@@ -23,13 +23,40 @@ SudoWithoutPasswd(){
     echo -e "\033[32m Do $FUNCNAME ... End\033[0m"
 }
 
+InstallToolsFromApt(){
+    sudo apt-get install fish
+    sudo apt-get install trash-cli
+}
+
+InstallToolsFromSource(){
+    #1
+    sudo wget --no-check-certificate -O /usr/bin/bd https://raw.github.com/vigneshwaranr/bd/master/bd
+    sudo chmod +rx /usr/bin/bd
+    echo 'alias bd=". bd -si"' >> ~/.bashrc
+    source ~/.bashrc
+
+    #2  cheat
+    pip install docopt pygments
+    git clone https://github.com/chrisallenlane/cheat.git
+    cd cheat
+    sudo python setup.py install
+    wget https://github.com/chrisallenlane/cheat/raw/master/cheat/autocompletion/cheat.bash 
+    sudo mv cheat.bash /etc/bash_completion.d/
+    echo 'export CHEATCOLOR=true' >> ~/.bashrc
+    echo 'alias q="cheat"' >> ~/.bashrc
+    source ~/.bashrc
+
+    #3 ici
+    pip install ici
+
+
+}
 
 Main(){
-
     AddUser $*
-
     SudoWithoutPasswd
-
+    InstallToolsFromSource
+    InstallToolsFromApt
 }
 
 Main $*
