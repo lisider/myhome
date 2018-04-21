@@ -20,6 +20,7 @@ git show HEAD
 # 查看所有分支最新的提交
 git show dev
 git show master
+git branch -vv
 
 # 查看提交注释
 git log -p -2 # 最新两次提交的差异
