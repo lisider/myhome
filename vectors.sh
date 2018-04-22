@@ -7,7 +7,7 @@
 #########################################################################
 #!/bin/bash
 
-AddUser(){
+Main(){
 
     #USERNAME=$1
     USERNAME=$0
@@ -26,3 +26,5 @@ AddUser(){
     #ln -s /home/${USERNAME}/.config/.profile /home/${USERNAME}/.profile
     #ln -s /home/${USERNAME}/.config/.bashrc /home/${USERNAME}/.bashrc
 }
+
+Main $*
