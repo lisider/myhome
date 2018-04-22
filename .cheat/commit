@@ -1,12 +1,13 @@
 # 提交的意义
-head 指向当前工作的分支,分支指向该分支的最新提交
+HEAD 默认指向当前工作的分支,分支只能指向该分支的最新提交
+HEAD 也可以指向提交
 
-可以用 checkout 分支名 来改变 head
+可以用 checkout 分支名 来改变 HEAD
 可以用 commit 来改变 分支
 也可以用 revert reset 来改变分支
 
-git checkout dev # 改变了 head ,且 当前最新 commit-id 为 最新提交
-git checkout commit-id # 没有改变 分支 ,没有改变head
+git checkout dev # 改变了 HEAD ,且 当前最新 commit-id 为 最新提交
+git checkout commit-id # 没有改变 分支 ,改变了 HEAD
 git checkout dev # 切换到最新提交
 
 
@@ -14,7 +15,7 @@ git checkout dev # 切换到最新提交
 git log | grep "^Author: " | awk '{print $2}' | sort | uniq -c | sort -k1,1nr 查看当前分支所有提交者及其次数
 
 
-# 查看当前分支最新的提交,即head
+# 查看当前分支最新的提交,即HEAD
 git show HEAD
 
 # 查看所有分支最新的提交
@@ -51,14 +52,14 @@ git revert commit-id #销指定的版本，撤销也会作为一次提交进行�
 # push 后回退
 # merge 后回退
 
-head 
+HEAD 
 没有 head ,只有 HEAD
 
-refers/head
+refers/HEAD
 
 HAAD
 
-refers/for/head
+refers/for/HEAD
 
 origin/master
 
