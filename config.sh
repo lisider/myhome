@@ -3,13 +3,20 @@
 
 SudoWithoutPasswd(){
     echo -e "\033[32m Do $FUNCNAME ... Start\033[0m"
-    echo ${PASSWD} | sudo sed -i "\$a ${USERNAME} ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
+    echo ${PASSWD} | sudo sed -i "\$a ${USER} ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
     echo -e "\033[32m Do $FUNCNAME ... End\033[0m"
 }
 
 InstallToolsFromApt(){
     sudo apt-get install fish
     sudo apt-get install trash-cli
+
+    #4 the fuck
+    #sudo apt install python3-dev python3-pip
+    #sudo pip3 install thefuck
+
+    #3 ici
+    pip install ici
 }
 
 InstallToolsFromSource(){
@@ -30,31 +37,18 @@ InstallToolsFromSource(){
     echo 'alias q="cheat"' >> ~/.bashrc
     source ~/.bashrc
 
-    #3 ici
-    pip install ici
-
-    #4 the fuck
-    sudo apt install python3-dev python3-pip
-    sudo pip3 install thefuck
-
     # oh-my-zsh
     sudo apt-get install zsh
     cd ~;sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
     git clone https://github.com/powerline/fonts.git --depth=1
     cd fonts;./install.sh
     cd ~;sudo fc-cache dir .local -fv
-
-
-
-
-
 }
 
 Main(){
-    echo hello
-    #SudoWithoutPasswd
-    #InstallToolsFromSource
-    #InstallToolsFromApt
+    SudoWithoutPasswd
+    InstallToolsFromApt
+    InstallToolsFromSource
 }
 
 Main $*
