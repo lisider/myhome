@@ -4,8 +4,8 @@
 
 InstallToolsFromApt(){
     echo -e "\033[32m Do $FUNCNAME ... Start\033[0m"
-    sudo apt-get install fish
-    sudo apt-get install trash-cli
+    sudo apt-get install fish -y
+    sudo apt-get install trash-cli -y
 
     #4 the fuck
     #sudo apt install python3-dev python3-pip
@@ -36,7 +36,7 @@ InstallToolsFromSource(){
     source ~/.bashrc
 
     # oh-my-zsh
-    sudo apt-get install zsh
+    sudo apt-get install zsh -y
     cd ~;sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
     git clone https://github.com/powerline/fonts.git --depth=1
     cd fonts;./install.sh

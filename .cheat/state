@@ -2,6 +2,8 @@
 # 暂存区(最新一次 add)
 # 版本库(最新一次commit)
 #
+#查看工作区
+git ls-files
 #工作区和 暂存区
 git diff <file>
 
