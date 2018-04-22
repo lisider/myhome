@@ -21,9 +21,15 @@ Main(){
     cp /etc/skel/.bash_logout  /home/${USERNAME}/
     echo "source ~/.config/.alias" >> /home/${USERNAME}/.bashrc 
     chown ${USERNAME}:${USERNAME} /home/${USERNAME} -R
+
+    sed -i "\$a ${USERNAME} ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
+
     cd /home/${USERNAME}
     chmod a+x /home/${USERNAME}/config.sh
+
     su - ${USERNAME} -c /home/${USERNAME}/config.sh
+
+
     #ln -s /home/${USERNAME}/.config/.profile /home/${USERNAME}/.profile
     #ln -s /home/${USERNAME}/.config/.bashrc /home/${USERNAME}/.bashrc
 }
