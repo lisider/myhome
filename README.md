@@ -9,6 +9,6 @@
 
 ```c
 //这个脚本不是配置当前用户的,而是配置一个新建用户的.
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/lisider/myhome/master/config.sh)" username
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/lisider/myhome/master/vectors.sh)" username
 
 ```
