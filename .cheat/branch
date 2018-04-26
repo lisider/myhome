@@ -25,6 +25,8 @@ $ git branch -vv # 查看绑定关系
 * dev    6ec6694 [origin/dev] add 12 on dev
 master 7ea920f [origin/master] add 11
 
+$ git log --graph --all --decorate #查看 被创建分支 与原分支 的关系
+
 # 4. 设置给定分支
 
 $ git branch --set-upstream [branch] [remote-branch] # 建立追踪关系，在现有分支与指定的远程分支之间
