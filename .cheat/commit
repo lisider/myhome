@@ -27,6 +27,7 @@ git branch -vv
 git log -p -2 # 最新两次提交的差异
 git log --state # 查看提交行数
 git log --pretty=oneline <filename> #查找指定文件的 提交记录
+git config --global alias.hist 'log --pretty=format:"%C(auto)%h %ad | %C(auto)%s%d  %Cblue(%an)" --graph --date=short'
 
 # 查看提交具体内容
 git log --pretty=oneline <filename> #查找指定文件的 提交记录
