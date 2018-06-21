@@ -44,9 +44,17 @@ InstallToolsFromSource(){
     echo -e "\033[32m Do $FUNCNAME ... End\033[0m"
 }
 
+MkdirDirectory(){
+    cd /home/${USER}
+    mkdir github
+    mkdir pro
+    mkdir tmp
+}
+
 Main(){
     InstallToolsFromApt
     InstallToolsFromSource
+    MkdirDirectory
 }
 
 Main $*

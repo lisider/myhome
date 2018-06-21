@@ -25,9 +25,9 @@ Main(){
     sed -i "\$a ${USERNAME} ALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers 
 
     cd /home/${USERNAME}
-    chmod a+x /home/${USERNAME}/config.sh
+    chmod a+x /home/${USERNAME}/bin/config.sh
 
-    su - ${USERNAME} -c /home/${USERNAME}/config.sh
+    su - ${USERNAME} -c /home/${USERNAME}/bin/config.sh
 
 
     #ln -s /home/${USERNAME}/.config/.profile /home/${USERNAME}/.profile

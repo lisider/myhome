@@ -10,6 +10,6 @@
 ```c
 //这个脚本不是配置当前用户的,而是配置一个新建用户的.
 sudo su -
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/lisider/myhome/master/vectors.sh)" username
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/lisider/myhome/master/bin/vectors.sh)" username
 
 ```
