@@ -1,0 +1,7 @@
+Main(){
+#echo "0X07FD4804 - 0X07FCE7F8 - 0X54BC" | tr '[a-z]' '[A-Z]' | xargs echo ibase = 16 \;  | sed "s/0X//g" |bc
+echo $* | tr '[a-z]' '[A-Z]' | xargs echo ibase = 16 \;  | sed "s/0X//g" |bc
+}
+
+
+Main $*

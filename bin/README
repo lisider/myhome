@@ -1,4 +1,14 @@
 - format 是一个脚本工具,用来格式化代码,基于vim,基于vim 的配置 ,vim 配置 可以参考 
+
+- usage
+
+
+```c
+
+format didectory1
+
+```
+
 ```c
 
 "设置一次回车的宽度,默认为8
@@ -9,3 +19,22 @@ set expandtab
 set tabstop=4
 
 ```
+- bchex 是一个脚本工具,用于计算十六进制
+
+```c
+
+bchex 0x34-0x12
+
+```
+
+- tree2dotx 是 流格式转换工具,将tree格式转换为dot格式
+
+```c
+
+tree2dotx  2>/dev/null | dot -Tsvg -o main.svg
+
+```
+
+
+- config.sh vectors.sh 是配置文件,放到了bin 文件中,不需要关注
+
