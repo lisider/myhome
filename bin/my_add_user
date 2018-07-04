@@ -1,0 +1,49 @@
+#########################################################################
+# File Name: add.sh
+# Author: Sues
+# mail: sumory.kaka@foxmail.com
+# Created Time: Wed 04 Jul 2018 06:14:53 PM CST
+# Version : 1.0
+#########################################################################
+#!/bin/bash
+
+# sudo bash add.sh pop
+
+NPASS=1
+USER_TO_ADD=$1 # $1 为 pop 
+
+if [ $# -ne 1 ];then
+    echo "sudo bash $0 pop"  
+    exit -1
+fi
+
+which expect > /dev/null
+
+if [ $? -ne 0 ];then
+    sudo apt-get install expect
+fi
+
+
+sudo useradd ${USER_TO_ADD}  -s /bin/bash   -G sudo
+
+sudo mkdir /home/${USER_TO_ADD}
+
+sudo chown ${USER_TO_ADD}:${USER_TO_ADD} /home/${USER_TO_ADD}
+
+sudo usermod -d /home/${USER_TO_ADD} ${USER_TO_ADD}
+
+#sudo mount -t cifs //SH-SUWEISHUAI/Share /home/${USER_TO_ADD}   -o username=suweishuai,password=1234Weishuai,ip=172.17.140.75,gid=`id -g ${USER_TO_ADD}`,uid=`id -u ${USER_TO_ADD}`
+
+
+expect<<EOF
+spawn passwd ${USER_TO_ADD} 
+expect "Enter new UNIX password:"
+send "${NPASS}\r"
+expect "Retype new UNIX password:"
+send "${NPASS}\r"
+expect eof;
+EOF
+
+echo -e "\033[32m ${USER_TO_ADD} has been Created, passd is 1 \033[0m"
+echo -e "\033[32m home is /home/${USER_TO_ADD} where locate in network \033[0m"
+

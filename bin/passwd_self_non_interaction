@@ -1,0 +1,15 @@
+#!/bin/bash  
+
+# bash passwd_withoutsudo.sh
+PASS=12345670op
+NPASS=123456
+expect<<EOF
+spawn passwd  
+expect "(current) UNIX password:"
+send "${PASS}\r"
+expect "Enter new UNIX password:"
+send "${NPASS}\r"
+expect "Retype new UNIX password:"
+send "${NPASS}\r"
+expect eof;
+EOF

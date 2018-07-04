@@ -1,0 +1,13 @@
+#!/bin/bash  
+# sudo bash passwd_withsudo.sh
+echo $#
+USER_TO=$1
+NPASS=1
+expect<<EOF
+spawn passwd ${USER_TO} 
+expect "Enter new UNIX password:"
+send "${NPASS}\r"
+expect "Retype new UNIX password:"
+send "${NPASS}\r"
+expect eof;
+EOF
