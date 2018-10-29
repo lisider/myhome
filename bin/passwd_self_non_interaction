@@ -1,15 +1,27 @@
 #!/bin/bash  
-
+# 
 # bash passwd_withoutsudo.sh
 PASS=12345670op
 NPASS=123456
-expect<<EOF
+
+# 必须1
+expect<<EOF 
+
+#必须2
 spawn passwd  
+
+# 一次交互有一次expect ,expect 的是 最后打印的字符,中间不能有 * 号
 expect "(current) UNIX password:"
 send "${PASS}\r"
+
 expect "Enter new UNIX password:"
 send "${NPASS}\r"
+
 expect "Retype new UNIX password:"
 send "${NPASS}\r"
+
+#必须2
 expect eof;
+
+#必须1
 EOF
